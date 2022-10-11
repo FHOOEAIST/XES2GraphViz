@@ -13,7 +13,7 @@
 
     <groupId>science.aist</groupId>
     <artifactId>xes-to-graphviz</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <properties>
         <testng.version>7.6.0</testng.version>
@@ -52,7 +52,7 @@
         <connection>scm:git:git@github.com:FHOOEAIST/XES2GraphViz.git</connection>
         <url>https://github.com/FHOOEAIST/XES2GraphViz</url>
         <developerConnection>scm:git:git@github.com:FHOOEAIST/XES2GraphViz.git</developerConnection>
-        <tag>xes-to-graphviz-1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
