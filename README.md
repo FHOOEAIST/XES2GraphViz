@@ -1,14 +1,32 @@
-# <Project name >
+# XES to GraphViz
 
-<project description>
+An implementation, that transforms a given XES input into a Direct Follower Graph rendered by GraphViz.
 
 ## Getting Started
 
-<Write how to get started. e.g. which dependencies are required, how you can build the project. and how you can start.>
+To use the project, simply include the maven dependency on the project.
+
+```xml
+<dependency>
+    <groupId>science.aist</groupId>
+    <artifactId>xes-to-graphviz</artifactId>
+    <version>1.0.0</version>
+    <scope>compile</scope> <!-- Note: this is default -->
+</dependency>
+```
+
+This then enables you to convert a XES log into a graph representation, and then render the graph into a GraphViz
+representation of a Direct Follower Graph.
+
+```java
+LogType log = new LogRepository().load(...).getValue();
+Transformer<LogType, String> xes2graphViz = new XesToGraphTransformer().andThen(new GraphToDirectFollowerGraphGraphVizTransformer());
+String res = xes2graphViz.applyTransformation(log);
+```
 
 ## FAQ
 
-If you have any questions, please checkout our <insert FAQ link here if using maven site, otherwise write a small FAQ section here>.
+If you have any questions, please checkout our [FAQ](https://fhooeaist.github.io/XES2GraphViz/faq.html) section.
 
 ## Contributing
 
@@ -16,7 +34,7 @@ If you have any questions, please checkout our <insert FAQ link here if using ma
    
 ## License
 
-Copyright (c) 2020 the original author or authors.
+Copyright (c) 2022 the original author or authors.
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES.
 
 This Source Code Form is subject to the terms of the Mozilla Public
