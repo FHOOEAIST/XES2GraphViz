@@ -16,7 +16,7 @@ To use the project, simply include the maven dependency on the project.
 ```
 
 This then enables you to convert a XES log into a graph representation, and then render the graph into a GraphViz
-representation of a Direct Follower Graph.
+representation of a Directly-Follows Graphs.
 
 ```java
 LogType log = new LogRepository().load(...).getValue();
