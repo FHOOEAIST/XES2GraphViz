@@ -35,13 +35,15 @@ public class XesToGraphTransformer implements Transformer<LogType, Graph<EventTy
 
         for (TraceType traceType : log.getTrace()) {
             // Sort the list of event types according to their timestamp
-            List<EventType> event = traceType.getEvent().stream()
+            List<EventType> events = traceType.getEvent().stream()
                     .sorted(Comparator.comparing(EventTypeHelper::extractDateFromEventType))
                     .collect(Collectors.toList());
 
+            events.forEach(graphBuilder::addVertex);
+
             // Create edges between sibling elements
-            for (int i = 0; i < event.size() - 1; i++) {
-                graphBuilder.from(event.get(i)).to(event.get(i + 1));
+            for (int i = 0; i < events.size() - 1; i++) {
+                graphBuilder.from(events.get(i)).to(events.get(i + 1));
             }
         }
 
