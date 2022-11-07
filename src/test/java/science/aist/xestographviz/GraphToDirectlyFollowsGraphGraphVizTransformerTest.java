@@ -17,27 +17,23 @@ import science.aist.xes.model.EventType;
 import science.aist.xes.model.LogType;
 import science.aist.xes.model.impl.LogRepository;
 
-import javax.xml.bind.JAXBElement;
-
-import static org.testng.Assert.*;
-
 
 /**
- * <p>Tests {@link GraphToDirectFollowerGraphGraphVizTransformer}</p>
+ * <p>Tests {@link GraphToDirectlyFollowsGraphGraphVizTransformer}</p>
  *
  * @author Andreas Pointner
  */
-public class GraphToDirectFollowerGraphGraphVizTransformerTest {
+public class GraphToDirectlyFollowsGraphGraphVizTransformerTest {
 
     @Test
     public void testApplyTransformation() {
         // given
         LogType log = new LogRepository().load(getClass().getResourceAsStream("/log.xes")).getValue();
         Graph<EventType, Void> graph = new XesToGraphTransformer().applyTransformation(log);
-        GraphToDirectFollowerGraphGraphVizTransformer graphToDirectFollowerGraphGraphVizTransformer = new GraphToDirectFollowerGraphGraphVizTransformer();
+        GraphToDirectlyFollowsGraphGraphVizTransformer graphToDirectlyFollowsGraphGraphVizTransformer = new GraphToDirectlyFollowsGraphGraphVizTransformer();
 
         // when
-        String res = graphToDirectFollowerGraphGraphVizTransformer.applyTransformation(graph);
+        String res = graphToDirectlyFollowsGraphGraphVizTransformer.applyTransformation(graph);
 
         // then
         Assert.assertNotNull(res);
@@ -48,7 +44,7 @@ public class GraphToDirectFollowerGraphGraphVizTransformerTest {
     public void testPipeline() {
         // given
         LogType log = new LogRepository().load(getClass().getResourceAsStream("/log.xes")).getValue();
-        Transformer<LogType, String> xes2graphViz = new XesToGraphTransformer().andThen(new GraphToDirectFollowerGraphGraphVizTransformer());
+        Transformer<LogType, String> xes2graphViz = new XesToGraphTransformer().andThen(new GraphToDirectlyFollowsGraphGraphVizTransformer());
 
         // when
         String res = xes2graphViz.applyTransformation(log);
