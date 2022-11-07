@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"science.aist.xestographviz","l":"EventTypeHelper"},{"p":"science.aist.xestographviz","l":"GraphToDirectFollowerGraphGraphVizTransformer"},{"p":"science.aist.xestographviz","l":"XesToGraphTransformer"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"science.aist.xestographviz","l":"EventTypeHelper"},{"p":"science.aist.xestographviz","l":"GraphToDirectlyFollowsGraphGraphVizTransformer"},{"p":"science.aist.xestographviz","l":"XesToGraphTransformer"}]
