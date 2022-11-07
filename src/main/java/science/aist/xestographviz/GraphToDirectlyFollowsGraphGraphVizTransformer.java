@@ -18,13 +18,13 @@ import science.aist.jack.math.MinMax;
 import science.aist.xes.model.EventType;
 
 /**
- * <p>Transformation from a {@link Graph} of {@link EventType} into a GraphViz representation of a Direct Follower
+ * <p>Transformation from a {@link Graph} of {@link EventType} into a GraphViz representation of a Directly-Follows
  * Graph</p>
  *
  * @author Andreas Pointner
  * @since 1.0
  */
-public class GraphToDirectFollowerGraphGraphVizTransformer implements Transformer<Graph<EventType, Void>, String> {
+public class GraphToDirectlyFollowsGraphGraphVizTransformer implements Transformer<Graph<EventType, Void>, String> {
 
     /**
      * The min width of the pen
